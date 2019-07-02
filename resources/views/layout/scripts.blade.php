@@ -15,7 +15,7 @@
   <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
   <script src="{{asset('assets/js/plugins/bootstrap-datetimepicker.min.js')}}"></script>
   <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
-  <script src="{{asset('assets/js/plugins/jquery.dataTables.min.js')}}"></script>
+  {{-- <script src="{{asset('assets/js/plugins/jquery.dataTables.min.js')}}"></script> --}}
   <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
   <script src="{{asset('assets/js/plugins/bootstrap-tagsinput.js')}}"></script>
   <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
@@ -219,6 +219,20 @@
     });
   </script>
 
- 
+
   <script type="text/javascript" src="{{asset('assets/DataTables/datatables.min.js')}}"></script>
-  @stack('scripts')
+  <script type="text/javacript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+  <script type="text/javascript" src='https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js'></script>
+  <script type="text/javascript" src='https://cdn.datatables.net/buttons/1.5.6/js/buttons.flash.min.js'></script>
+  <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js'></script>
+  <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js'></script>
+  <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js'></script>
+  <script type="text/javascript" src='https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js'></script>
+  <script type="text/javascript" src='https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js'></script>
+  <script type="text/javascript" src=' https://cdn.datatables.net/buttons/1.5.6/js/buttons.colVis.min.js'></script>
+
+{{--  <script type="text/javascript" src="{{asset('assets/qrcodejs/qrcode.min.js')}}"></script>  --}}
+  {{-- <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script> --}}
+  {{-- <script type="text/javascript" src="{{asset('assets/qrcodejs/instascan.min.js')}}"></script> --}}
+ @stack('scripts')

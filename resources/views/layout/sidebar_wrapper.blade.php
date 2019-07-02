@@ -1,61 +1,67 @@
 <div class="sidebar-wrapper">
   <ul class="nav">
     <li class="nav-item active  ">
-      <a class="nav-link" href="./dashboard.html">
+      <a class="nav-link" href="dashboard">
         <i class="material-icons">dashboard</i>
         <p>HOME</p>
       </a>
     </li>
-    <li class="nav-item ">
+    <li class="villages ">
     <a class="nav-link" href="{{route('villages.index')}}">
         <i class="material-icons">person</i>
         <p>Villages</p>
       </a>
     </li>
-    <li class="nav-item ">
-      <a class="nav-link" href="./user.html">
+    <li class="consommations ">
+        <a class="nav-link" href="{{route('consommations.index')}}">
+            <i class="material-icons">person</i>
+            <p>Consommations</p>
+          </a>
+        </li>
+    <li class="clients ">
+      <a class="nav-link" href="{{route('clients.index')}}">
         <i class="material-icons">person</i>
         <p>Clients</p>
       </a>
     </li>
-    <li class="nav-item ">
-      <a class="nav-link" href="./user.html">
+    {{--  <li class="administrateurs">
+      <a class="nav-link" href="{{route('administrateurs.index')}}">  
         <i class="material-icons">person</i>
         <p>Administrateurs</p>
       </a>
-    </li>
-    <li class="nav-item ">
-      <a class="nav-link" href="./user.html">
+    </li>  --}}
+    {{--  <li class="comptables ">
+      <a class="nav-link" href="{{route('comptables.index')}}">
         <i class="material-icons">person</i>
         <p>Comptables</p>
       </a>
     </li>
-    <li class="nav-item ">
-      <a class="nav-link" href="./tables.html">
+    <li class="agents ">
+      <a class="nav-link" href="{{route('agents.index')}}">
         <i class="material-icons">content_paste</i>
         <p>Agents</p>
       </a>
     </li>
-    <li class="nav-item ">
-      <a class="nav-link" href="./typography.html">
+    <li class="gestionnaires">
+      <a class="nav-link" href="{{route('gestionnaires.index')}}">
         <i class="material-icons">library_books</i>
         <p>Gestionnaires</p>
       </a>
     </li>
-    <li class="nav-item ">
-      <a class="nav-link" href="./icons.html">
+    <li class="abonnements">
+      <a class="nav-link" href="{{route('abonnements.index')}}">
         <i class="material-icons">bubble_chart</i>
         <p>Abonnements</p>
       </a>
-    </li>
-    <li class="nav-item ">
-      <a class="nav-link" href="./map.html">
+    </li>  --}}
+    <li class="compteurS">
+      <a class="nav-link" href="{{route('compteurs.index')}}">
         <i class="material-icons">location_ons</i>
         <p>Compteurs</p>
       </a>
     </li>
-    <li class="nav-item ">
-      <a class="nav-link" href="./notifications.html">
+    <li class="factures">
+      <a class="nav-link" href="{{route('factures.index')}}">
         <i class="material-icons">notifications</i>
         <p>Facturation</p>
       </a>
@@ -66,12 +72,7 @@
         <p>RTL Support</p>
       </a>
     </li>
-    <li class="nav-item active-pro ">
-      <a class="nav-link" href="./upgrade.html">
-        <i class="material-icons">unarchive</i>
-        <p>Upgrade to PRO</p>
-      </a>
-    </li>
+  
   </ul>
 </div>
 {{-- <div class="sidebar-wrapper">

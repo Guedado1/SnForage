@@ -8,7 +8,7 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">SENFORAGE</h4>
+                  <h4 class="card-title ">snForage</h4>
                   <p class="card-category"> Villages</p>
                 </div>
                 <div class="card-body">

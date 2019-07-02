@@ -8,7 +8,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
-
+use App\Facture;
 /**
  * Class Compteur
  * 
@@ -53,5 +53,34 @@ class Compteur extends Eloquent
 	public function consommations()
 	{
 		return $this->hasMany(\App\Consommation::class, 'compteurs_id');
-	}
+	}	
+		public function getNewConsommationsAttribute() 
+		{
+		return $this->consommations->where('facture','=',null);
+		}
+	
+	
+
+
+public function generateFacture(){
+	$nouvelle_conso= $this->getNewConsommationsAttribute();
+
+	if($nouvelle_conso->count() > 0){ 
+$facture = new Facture;
+$facture->details="generee auto...";
+$facture->save();
+$valeur=0;
+foreach($nouvelles_conso as $conso){
+$valeur+=$conso->valeur;
+}
+
+$facture->valeur_totale_consommee=$valeur;
+$facture->save();
+$facture->consommations()->saveMany($nouvelle_conso);
+return $facture;
+
+}
+
+	return null;
+}
 }

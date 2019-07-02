@@ -34,9 +34,14 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
  *
  * @package App
  */
-class User extends Eloquent
-{
-	use \Illuminate\Database\Eloquent\SoftDeletes;use \App\Helpers\UuidForKey;
+/* class User extends Eloquent */
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class User extends Authenticatable{
+	use \Illuminate\Database\Eloquent\SoftDeletes;
+	use \App\Helpers\UuidForKey;
 
 	protected $casts = [
 		'roles_id' => 'int'
@@ -60,11 +65,10 @@ class User extends Eloquent
 		'password',
 		'roles_id'
 	];
-
 	public function role()
 	{
-		return $this->belongsTo(\App\Role::class, 'roles_id');
-	}
+	 return $this->belongsTo(\App\Role::class,'roles_id');
+	}	
 
 	public function administrateur()
 	{
@@ -90,4 +94,13 @@ class User extends Eloquent
 	{
 		return $this->hasOne(\App\Gestionnaire::class, 'users_id');
 	}
+	public function hasRole($rolename)//middleware
+	{	
+	return $this->role->name== $rolename;
+	}	
+	public function hasAnyRoles($roles)//Middleware avec utilisation de tableau
+	{	
+	return in_array($this->role->name, $roles);
+	}	
+
 }

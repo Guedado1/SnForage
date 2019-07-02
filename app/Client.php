@@ -62,8 +62,18 @@ class Client extends Eloquent
 		return $this->belongsTo(\App\Village::class);
 	}
 
-	public function abonnements()
+	public function abonnement()
 	{
 		return $this->hasMany(\App\Abonnement::class, 'clients_id');
+	}
+
+
+public function facture()
+	{
+		return $this->hasMany(\App\Factures::class, 'clients_id');
+	}
+	public function Compteur()
+	{
+		return $this->hasMany(\App\Compteurs::class, 'clients_id');
 	}
 }

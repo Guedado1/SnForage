@@ -29,11 +29,18 @@ class ClientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
-        return view('clients.create');
-    }
+            //
+            // $this->validate(
+            //     $request, [
+            //         'village' => 'required|exists:villages,id',
+            //     ]);
+            $village_id=$request->input('village');
+            $village=\App\Village::find($village_id);
+            return view('clients.create',compact('village'));
+        }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -85,6 +92,8 @@ class ClientController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
+   
+
     public function update(Request $request, Client $client)
     {
         //
@@ -96,8 +105,12 @@ class ClientController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Client $client)
-    {
-        //
-    }
+    
+       public function destroy(Client $client)
+       {
+           $client->delete();
+           $message = $client->user->firstname.' '.$client->user->name.' a été supprimé(e)';
+           return redirect()->route('clients.index')->with(compact('message'));
+       }
+    
 }
